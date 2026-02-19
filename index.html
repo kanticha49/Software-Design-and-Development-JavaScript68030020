@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นางสาวกันติชา ย๋องชา')">name</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2">วันที่</button>
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="hello3();">เวลา</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+    document.getElementById('btn2').onclick = function() {
+        const today = new Date();
+        alert("วันที่ปัจจุบัน: " + today.toLocaleDateString('th-TH'));
+    };
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>
