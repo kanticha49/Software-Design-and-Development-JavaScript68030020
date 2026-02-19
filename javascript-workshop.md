@@ -76,10 +76,36 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
    - มีปุ่มเมื่อคลิกแล้วจะแสดงข้อความที่กรอกในช่องข้อความ  (สามารถใช้ document.getElementById('id ของ textbox').value เพื่อดึงข้อมูลในช่อง)
 ### บันทึกผลการทดลอง 
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นางสาวกันติชา ย๋องชา')">name</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2">วันที่</button>
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="hello3();">เวลา</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+    document.getElementById('btn2').onclick = function() {
+        const today = new Date();
+        alert("วันที่ปัจจุบัน: " + today.toLocaleDateString('th-TH'));
+    };
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>
+]
 ```
 **รูปผลการทดลอง**
-![รูปผลการทดลองที่ 1](images/image.png)
+![รูปผลการทดลองที่ 1](![alt text](image.png))
 
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
@@ -134,11 +160,21 @@ let person = {
 2. สร้าง Object สำหรับเก็บข้อมูลนักศึกษา  ประกอบด้วยข้อมูล รหัสนักศึกษา, ชื่อ, สาขาวิชา, เกรดเฉลี่ย
 
 ### บันทึกผลการทดลอง 2.1
-```html
-[บันทึกโค้ด ที่นี่]
+```javascript
+[const studentID = "68030020";           
+let studentName = "นางสาวกันติชา ย๋องชา";  
+let midtermScore = 78;                  
+let finalExamScore = 82;                
+
+
+const student = {
+    id: "68030020",
+    name: "นางสาวกันติชา ย๋องชา",
+    major: "เทคโนโลยีคอมพิวเตอร์",
+    gpa: 3.45 ่]
 ```
 **รูปผลการทดลอง**
-![รูปผลการทดลองที่ 2.1](images/image.png)
+![รูปผลการทดลองที่ 2.1](![alt text](image-1.png))
 
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
@@ -190,10 +226,34 @@ number /= 2;          // เท่ากับ number = number / 2
 
 ### บันทึกผลการทดลอง 2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+    <h3>แบบทดสอบที่ 2.2: การคำนวณพื้นฐาน</h3>
+
+    <!-- โปรแกรม 1: คำนวณคะแนนเฉลี่ย 3 วิชา -->
+    <h4>โปรแกรมที่ 1: คำนวณคะแนนเฉลี่ย 3 วิชา</h4>
+    <label>คะแนนวิชาที่ 1: <input type="number" id="score1" placeholder="กรอกคะแนน"></label><br>
+    <label>คะแนนวิชาที่ 2: <input type="number" id="score2" placeholder="กรอกคะแนน"></label><br>
+    <label>คะแนนวิชาที่ 3: <input type="number" id="score3" placeholder="กรอกคะแนน"></label><br>
+    <button onclick="calculateAverageScore();">คำนวณคะแนนเฉลี่ย</button>
+    <p id="avgOutput"></p>
+
+    <hr>
+
+    <!-- โปรแกรม 2: คำนวณราคาสินค้าที่รวม VAT 7% -->
+    <h4>โปรแกรมที่ 2: คำนวณราคาสินค้าที่รวม VAT 7%</h4>
+    <label>ชื่อสินค้า: <input type="text" id="productName" placeholder="กรอกชื่อสินค้า"></label><br>
+    <label>ราคาสินค้า: <input type="number" id="productPrice" placeholder="กรอกราคา"></label><br>
+    <button onclick="calculateVAT();">คำนวณราคาที่รวม VAT</button>
+    <p id="vatOutput"></p>
+
+     <script src="script.js"></script>
+</body>
+</html>]
 ```
 **รูปผลการทดลอง**
-![รูปผลการทดลองที่ 2.2](images/image.png)
+![รูปผลการทดลองที่ 2.2](![alt text](image-2.png))
 
 ### 2.3 การควบคุมการทำงาน
 
@@ -324,10 +384,45 @@ for (let i = 1; i <= 5; i++) {
 
 ### บันทึกผลการทดลอง 2.3
 ```html
-[บันทึกโค้ด ที่นี่]
+[<!DOCTYPE html>
+<html lang="th">
+<head>
+   
+    <h3>แบบทดสอบที่ 2.3: การควบคุมการทำงาน (Conditionals & Loops)</h3>
+    <!-- โปรแกรม 1: ตรวจสอบเลขคู่/เลขคี่ -->
+    <h4>โปรแกรมที่ 1: ตรวจสอบเลขคู่/เลขคี่</h4>
+    <label>กรอกตัวเลข: <input type="number" id="evenOddNumber" placeholder="กรอกตัวเลข"></label><br>
+    <button onclick="checkEvenOdd();">ตรวจสอบเลขคู่/คี่</button>
+    <p id="evenOddOutput"></p>
+
+    <hr>
+
+    <!-- โปรแกรม 2: สูตรคูณแม่ 2 (for loop) และแม่ 3 (while loop) -->
+    <h4>โปรแกรมที่ 2: ตารางสูตรคูณ</h4>
+    <button onclick="showMultiplicationTables();">แสดงสูตรคูณแม่ 2 (for) และแม่ 3 (while)</button>
+    <pre id="tablesOutput" style="border: 1px solid #ccc; padding: 10px; overflow: auto; max-height: 200px;"></pre>
+
+    <hr>
+
+    <!-- โปรแกรม 3: นับถอยหลัง 10-1 -->
+    <h4>โปรแกรมที่ 3: นับถอยหลังจาก 10 ถึง 1</h4>
+    <button onclick="countdown();">เริ่มนับถอยหลัง</button>
+    <p id="countdownOutput"></p>
+
+    <hr>
+
+    <!-- โปรแกรม 4: ตรวจสอบช่วงวัย -->
+    <h4>โปรแกรมที่ 4: ตรวจสอบช่วงวัย</h4>
+    <label>กรอกอายุ: <input type="number" id="ageInput" placeholder="กรอกอายุ"></label><br>
+    <button onclick="checkAgeGroup();">ตรวจสอบช่วงวัย</button>
+    <p id="ageOutput"></p>
+     <script src="script.js"></script>
+</body>
+</html>
+]
 ```
 **รูปผลการทดลอง**
-![รูปผลการทดลองที่ 2.3](images/image.png)
+![รูปผลการทดลองที่ 2.3](![alt text](image-3.png))
 
 ### 2.4 Functions และ Arrow Functions
 

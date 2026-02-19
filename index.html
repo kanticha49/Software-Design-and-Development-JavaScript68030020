@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <title>ทดลอง JavaScript</title>
-</head>
-<body>
-    <!-- Inline JavaScript -->
-    <button onclick="alert('นางสาวกันติชา ย๋องชา')">name</button>
+   
+    <h3>แบบทดสอบที่ 2.3: การควบคุมการทำงาน (Conditionals & Loops)</h3>
+    <!-- โปรแกรม 1: ตรวจสอบเลขคู่/เลขคี่ -->
+    <h4>โปรแกรมที่ 1: ตรวจสอบเลขคู่/เลขคี่</h4>
+    <label>กรอกตัวเลข: <input type="number" id="evenOddNumber" placeholder="กรอกตัวเลข"></label><br>
+    <button onclick="checkEvenOdd();">ตรวจสอบเลขคู่/คี่</button>
+    <p id="evenOddOutput"></p>
 
-    <!-- ทดสอบ Internal JavaScript -->
-    <button id="btn2">วันที่</button>
+    <hr>
 
-    <!-- ทดสอบ External JavaScript -->
-    <button id="btn3" onclick="hello3();">เวลา</button>
+    <!-- โปรแกรม 2: สูตรคูณแม่ 2 (for loop) และแม่ 3 (while loop) -->
+    <h4>โปรแกรมที่ 2: ตารางสูตรคูณ</h4>
+    <button onclick="showMultiplicationTables();">แสดงสูตรคูณแม่ 2 (for) และแม่ 3 (while)</button>
+    <pre id="tablesOutput" style="border: 1px solid #ccc; padding: 10px; overflow: auto; max-height: 200px;"></pre>
 
-    <!-- Internal JavaScript -->
-    <script>
-    document.getElementById('btn2').onclick = function() {
-        const today = new Date();
-        alert("วันที่ปัจจุบัน: " + today.toLocaleDateString('th-TH'));
-    };
-    </script>
+    <hr>
+
+    <!-- โปรแกรม 3: นับถอยหลัง 10-1 -->
+    <h4>โปรแกรมที่ 3: นับถอยหลังจาก 10 ถึง 1</h4>
+    <button onclick="countdown();">เริ่มนับถอยหลัง</button>
+    <p id="countdownOutput"></p>
+
+    <hr>
+
+    <!-- โปรแกรม 4: ตรวจสอบช่วงวัย -->
+    <h4>โปรแกรมที่ 4: ตรวจสอบช่วงวัย</h4>
+    <label>กรอกอายุ: <input type="number" id="ageInput" placeholder="กรอกอายุ"></label><br>
+    <button onclick="checkAgeGroup();">ตรวจสอบช่วงวัย</button>
+    <p id="ageOutput"></p>
      <script src="script.js"></script>
 </body>
 </html>
